@@ -1,6 +1,6 @@
 {
- "name":"salestrack-production","private":true,
- "scripts":{"dev":"next dev","build":"next build","start":"next start"},
- "dependencies":{"next":"latest","react":"latest","react-dom":"latest","@supabase/supabase-js":"latest","@supabase/ssr":"latest","lucide-react":"latest","recharts":"latest","xlsx":"latest","jspdf":"latest","jspdf-autotable":"latest"},
- "devDependencies":{"typescript":"latest","@types/node":"latest","@types/react":"latest"}
+  "name":"assem-orabi-portfolio","private":true,
+  "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
+  "dependencies":{"next":"latest","react":"latest","react-dom":"latest","framer-motion":"latest","lucide-react":"latest","tailwindcss":"latest","@tailwindcss/postcss":"latest"},
+  "devDependencies":{"typescript":"latest","@types/node":"latest","@types/react":"latest","@types/react-dom":"latest"}
 }
