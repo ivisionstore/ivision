@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react'
 import { Check, Copy, Gift, Loader2, LogOut, Plus, RefreshCw, TicketCheck, Upload } from 'lucide-react'
-import { supabaseBrowser } from '@/lib/supabase/client'
+import { supabaseBrowser } from '../../../lib/supabase/client'
 
 type Campaign={id:string;name:string;slug:string;discount_text:string;starts_at:string;ends_at:string|null;is_active:boolean}
 type Stats={total:number;available:number;assigned:number;used:number}
