@@ -3,7 +3,7 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { CheckCircle2, Copy, Gift, Loader2, ShieldCheck } from 'lucide-react'
 import { QRCodeSVG } from 'qrcode.react'
-import { supabaseBrowser } from '@/lib/supabase/client'
+import { supabaseBrowser } from '../../lib/supabase/client'
 
 export default function CouponPage() {
   const supabase = useMemo(() => supabaseBrowser(), [])
