@@ -4,8 +4,8 @@ const path = require('path')
 const file = path.join(process.cwd(), 'app/admin/coupons/page.tsx')
 let source = fs.readFileSync(file, 'utf8')
 
-// Repair any JSX escape characters left by an earlier injection attempt.
-source = source.replace(/\\(?=<\/?[A-Za-z])/g, '')
+// Remove one or more accidental backslashes before JSX tags.
+source = source.replace(/\\+(?=<\/?[A-Za-z])/g, '')
 
 if (!source.includes('FileSpreadsheet')) {
   source = source.replace(
@@ -79,7 +79,7 @@ if (!source.includes('Export Customer Excel')) {
   }
 }
 
-// Final sanitation protects the build from malformed escaped JSX.
-source = source.replace(/\\(?=<\/?[A-Za-z])/g, '')
+// Final sanitation: remove any remaining escaped JSX tag markers.
+source = source.replace(/\\+(?=<\/?[A-Za-z])/g, '')
 fs.writeFileSync(file, source)
 console.log('Coupon customer Excel export prepared.')
