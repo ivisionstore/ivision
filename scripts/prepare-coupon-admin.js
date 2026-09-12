@@ -4,7 +4,7 @@ const path = require('path')
 const file = path.join(process.cwd(), 'app/admin/coupons/page.tsx')
 let source = fs.readFileSync(file, 'utf8')
 
-if (!source.includes("FileSpreadsheet")) {
+if (!source.includes('FileSpreadsheet')) {
   source = source.replace(
     "  type LucideIcon,\n} from 'lucide-react'",
     "  type LucideIcon,\n  FileSpreadsheet,\n} from 'lucide-react'",
@@ -69,9 +69,12 @@ if (!source.includes('async function exportCustomers')) {
 
 if (!source.includes('Export Customer Excel')) {
   const marker = '<div className="flex flex-wrap justify-between gap-3 items-center"><div><h2 className="font-bold text-lg">Coupon Inventory</h2>'
-  const replacement = '<div className="flex flex-wrap justify-between gap-3 items-center"><div><h2 className="font-bold text-lg">Coupon Inventory</h2>'
-  const button = '</div><div className="flex items-center gap-2"><button type="button" onClick={exportCustomers} disabled={exportBusy} className="inline-flex items-center gap-2 rounded-xl border border-emerald-300/20 bg-emerald-300/10 text-emerald-200 px-4 py-2.5 text-sm font-bold disabled:opacity-50" title="Export all customers who received a coupon"><FileSpreadsheet size={16} />{exportBusy ? \'Exporting…\' : \'Export Customer Excel\'}</button>'
-  if (source.includes(marker)) source = source.replace(marker, replacement).replace('</p></div><button type="button" onClick={() => selected && loadStats(selected.id)}', button + '<button type="button" onClick={() => selected && loadStats(selected.id)}')
+  const replacement = marker
+  const button = `</div><div className="flex items-center gap-2"><button type="button" onClick={exportCustomers} disabled={exportBusy} className="inline-flex items-center gap-2 rounded-xl border border-emerald-300/20 bg-emerald-300/10 text-emerald-200 px-4 py-2.5 text-sm font-bold disabled:opacity-50" title="Export all customers who received a coupon"><FileSpreadsheet size={16} />{exportBusy ? 'Exporting…' : 'Export Customer Excel'}</button>`
+  const buttonMarker = '</p></div><button type="button" onClick={() => selected && loadStats(selected.id)}'
+  if (source.includes(marker) && source.includes(buttonMarker)) {
+    source = source.replace(marker, replacement).replace(buttonMarker, button + '<button type="button" onClick={() => selected && loadStats(selected.id)}')
+  }
 }
 
 fs.writeFileSync(file, source)
