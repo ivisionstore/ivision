@@ -14,6 +14,7 @@ type Product = {
   short_description: string | null
   price: number
   compare_at_price: number | null
+  currency: string | null
   stock_quantity: number
   low_stock_threshold: number
   brand: string | null
