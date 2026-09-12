@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/prepare-coupon-admin.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,7 +17,8 @@
     "tailwindcss": "latest",
     "@tailwindcss/postcss": "latest",
     "@supabase/supabase-js": "latest",
-    "qrcode.react": "latest"
+    "qrcode.react": "latest",
+    "xlsx": "latest"
   },
   "devDependencies": {
     "typescript": "latest",
