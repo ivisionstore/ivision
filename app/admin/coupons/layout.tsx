@@ -8,6 +8,6 @@ export default function CouponAdminLayout({ children }: { children: ReactNode })
       <img src="/ivision-logo.svg" alt="IVISION" className="w-36 sm:w-44 h-auto" />
       <span className="hidden sm:inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-xs tracking-[.18em] uppercase text-cyan-300">Secure Admin</span>
     </header>
-    <div className="relative z-10">{children}</div>
+    <div className="relative z-10 pt-20">{children}</div>
   </div>
 }
