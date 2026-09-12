@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { Archive, Boxes, Check, ChevronDown, Edit3, LogOut, Package, Plus, RefreshCw, Search, TrendingDown, X } from 'lucide-react'
-import { supabaseBrowser } from '@/lib/supabase/client'
+import { supabaseBrowser } from '../../lib/supabase/client'
 
 type Product = {
   id: string
