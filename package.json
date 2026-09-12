@@ -2,6 +2,6 @@
   "name":"ivision-store",
   "private":true,
   "scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},
-  "dependencies":{"next":"latest","react":"latest","react-dom":"latest","framer-motion":"latest","lucide-react":"latest","tailwindcss":"latest","@tailwindcss/postcss":"latest","@supabase/supabase-js":"latest"},
+  "dependencies":{"next":"latest","react":"latest","react-dom":"latest","framer-motion":"latest","lucide-react":"latest","tailwindcss":"latest","@tailwindcss/postcss":"latest","@supabase/supabase-js":"latest","qrcode.react":"latest"},
   "devDependencies":{"typescript":"latest","@types/node":"latest","@types/react":"latest","@types/react-dom":"latest"}
 }
